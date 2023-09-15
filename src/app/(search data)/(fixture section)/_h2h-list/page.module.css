@@ -1,0 +1,84 @@
+/* Small screens (up to 767px) */
+@media (max-width: 767px) {
+  .table__container {
+    max-width: 90vw; /* You can adjust the height as needed */
+    overflow-y: scroll;
+  }
+  .table__container td {
+    border: 1px solid white;
+    padding: 10px;
+  }
+  .matchWrapper__header {
+    display: flex;
+    justify-content: center;
+    margin: 10vh 0 5vh 0;
+    color: white;
+  }
+  .matchWrapper__header__content {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(41, 58, 73);
+    padding: 10px;
+    width: 100%;
+    gap: 20px;
+    font-family: monospace;
+    font-weight: 600;
+    font-size: 1.2em;
+  }
+  /* CSS styles for small screens go here */
+}
+
+/* Medium screens (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .table__container {
+    max-width: 90vw; /* You can adjust the height as needed */
+    overflow-y: scroll;
+  }
+  .table__container td {
+    border: 1px solid white;
+    padding: 10px;
+  }.matchWrapper__header {
+    display: flex;
+    justify-content: center;
+    margin: 10vh 0 5vh 0;
+    color: white;
+  }
+  .matchWrapper__header__content {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(41, 58, 73);
+    padding: 10px;
+    width: 100%;
+    gap: 20px;
+    font-family: monospace;
+    font-weight: 600;
+    font-size: 1.5em;
+  }
+  /* CSS styles for medium screens go here */
+}
+
+/* Large screens (992px and above) */
+@media (min-width: 992px) {
+  .table__container td {
+    border: 1px solid white;
+    padding: 10px;
+  }
+.matchWrapper__header {
+    display: flex;
+    justify-content: center;
+    margin: 10vh 0 5vh 0;
+    color: white;
+  }
+  .matchWrapper__header__content {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(41, 58, 73);
+    padding: 10px;
+    width: 100%;
+    gap: 20px;
+    font-family: monospace;
+    font-weight: 600;
+    font-size: 1.6em;
+  }
+  /* CSS styles for large screens go here */
+}

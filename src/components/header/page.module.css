@@ -1,0 +1,29 @@
+/* Small screens (up to 767px) */
+@media (max-width: 767px) {
+  .header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 0 20px;
+  }
+  /* CSS styles for small screens go here */
+}
+
+/* Medium screens (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 0 20px;
+  }
+  /* CSS styles for medium screens go here */
+}
+
+/* Large screens (992px and above) */
+@media (min-width: 992px) {
+  .header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 50px 0 50px;
+  }
+  /* CSS styles for large screens go here */
+}

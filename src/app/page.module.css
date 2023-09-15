@@ -1,0 +1,30 @@
+
+/* Small screens (up to 767px) */
+@media (max-width: 767px) {
+  .main {
+    display: flex;
+    justify-content: center;
+     min-height: 85vh;
+  }
+  /* CSS styles for small screens go here */
+}
+
+/* Medium screens (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+   .main {
+    display: flex;
+    justify-content: center;
+     min-height: 80vh;
+  }
+  /* CSS styles for medium screens go here */
+}
+
+/* Large screens (992px and above) */
+@media (min-width: 992px) {
+  .main {
+    display: flex;
+    justify-content: center;
+     min-height: 75vh;
+  }
+  /* CSS styles for large screens go here */
+}

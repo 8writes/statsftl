@@ -1,0 +1,216 @@
+/* Small screens (up to 767px) */
+@media (max-width: 767px) {
+  .searchBarContainer {
+    display: grid;
+    margin: 30px 10px 10px 10px;
+  }
+  .input__wrapper {
+    margin: 10px;
+  }
+  .teamName {
+    color: rgb(219, 219, 219);
+  }
+  .inputDisplay {
+    display: flex;
+    justify-content: space-between;
+    border: solid 1px white;
+    padding: 20px;
+    height: 8vh;
+    font-size: 1em;
+  }
+  .inputDisplay button {
+    background: none;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+  }
+
+  .input {
+    position: relative;
+  }
+  .input input {
+    background-color: rgb(59, 59, 59);
+    border: solid 1px white;
+    padding: 14px;
+    min-width: 90vw;
+    max-width: 80vw;
+    border: solid 1px white;
+    border-radius: none;
+    font-size: 17px;
+  }
+  .submitButton__wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+  }
+  .submitButton__container {
+    display: grid;
+    justify-content: center;
+    margin: 0 10px 0 10px;
+  }
+  .searchResultsContainer {
+    max-height: 40vh;
+    overflow: auto;
+    position: absolute;
+    right: 0;
+    margin: 0;
+    width: 100%;
+    background-color: rgb(18, 18, 18);
+    border-left: solid 1px white;
+    border-right: solid 1px white;
+  }
+  .searchResultsContainer:first-of-type {
+    z-index: 1;
+  }
+  .input:first-of-type {
+    z-index: 1;
+  }
+  .searchResultsContainer::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+  }
+  .searchResultsContainer::-webkit-scrollbar-thumb {
+    background: none; /* Color of the thumb */
+    border: solid 2px white;
+  }
+  /* CSS styles for small screens go here */
+}
+
+/* Medium screens (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .searchBarContainer {
+    display: grid;
+    margin: 50px 0;
+  }
+  .input__wrapper {
+    margin: 10px;
+  }
+  .teamName {
+    color: rgb(219, 219, 219);
+  }
+  .inputDisplay {
+    display: flex;
+    justify-content: space-between;
+    border: solid 1px white;
+    padding: 20px;
+    height: 8vh;
+    font-size: 1em;
+  }
+  .inputDisplay button {
+    background: none;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+  }
+
+  .input {
+    position: relative;
+  }
+  .input input {
+    background-color: rgb(59, 59, 59);
+    border: solid 1px white;
+    padding: 10px;
+    min-width: 90vw;
+    max-width: 90vw;
+    border-radius: none;
+    font-size: 17px;
+  }
+  .submitButton__wrapper {
+    display: grid;
+    justify-content: center;
+  }
+  .searchResultsContainer {
+    max-height: 30vh;
+    overflow: auto;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    background-color: rgb(18, 18, 18);
+    border-left: solid 1px white;
+    border-right: solid 1px white;
+  }
+  .searchResultsContainer:first-of-type {
+    z-index: 1;
+  }
+  .input:first-of-type {
+    z-index: 1;
+  }
+  .searchResultsContainer::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+  }
+  .searchResultsContainer::-webkit-scrollbar-thumb {
+    background: none; /* Color of the thumb */
+    border: solid 2px white;
+  }
+
+  /* CSS styles for medium screens go here */
+}
+
+/* Large screens (992px and above) */
+@media (min-width: 992px) {
+  .searchBarContainer {
+    display: flex;
+    margin: 50px 0;
+  }
+  .input__wrapper {
+    margin: 10px;
+  }
+  .teamName {
+    color: rgb(219, 219, 219);
+  }
+  .inputDisplay {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border: solid 1px white;
+    height: 8vh;
+    font-size: 1em;
+  }
+  .inputDisplay button {
+    background: none;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  .input {
+    position: relative;
+  }
+  .input input {
+    background-color: rgb(59, 59, 59);
+    border: solid 1px white;
+    padding: 10px;
+    min-width: 30vw;
+    max-width: 40vw;
+    border-radius: none;
+    font-size: 17px;
+    border-radius: none;
+  }
+
+  .submitButton__wrapper {
+    display: grid;
+    justify-content: center;
+  }
+  .searchResultsContainer {
+    max-height: 20vh;
+    overflow: auto;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    background-color: rgb(18, 18, 18);
+    border-left: solid 1px white;
+    border-right: solid 1px white;
+  }
+  .searchResultsContainer:first-of-type {
+    z-index: 1;
+  }
+  .input:first-of-type {
+    z-index: 1;
+  }
+  .searchResultsContainer::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+  }
+  .searchResultsContainer::-webkit-scrollbar-thumb {
+    background: none; /* Color of the thumb */
+    border: solid 2px white;
+  }
+  /* CSS styles for large screens go here */
+}

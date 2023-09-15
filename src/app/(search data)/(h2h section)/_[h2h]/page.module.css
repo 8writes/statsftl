@@ -1,0 +1,80 @@
+/* Small screens (up to 767px) */
+@media (max-width: 767px) {
+  /* CSS styles for small screens go here */
+}
+
+/* Medium screens (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* CSS styles for medium screens go here */
+}
+
+/* Large screens (992px and above) */
+@media (min-width: 992px) {
+  .matchWrapper__header {
+    display: flex;
+    justify-content: center;
+  }
+  .matchWrapper__header__content {
+   display: flex;
+    justify-content: space-between;
+    background-color: rgb(41, 58, 73);
+    min-width: 200px;
+    max-width: 900px;
+    width: 100%;
+    color: white;
+    padding: 30px 20px 30px 20px;
+    font-family: monospace;
+    font-weight: 600;
+    font-size: 1.7em;
+  }
+  .matchWrapper__body {
+    display: flex;
+    justify-content: center;
+  }
+  .matchWrapper__body__content {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0 40px 0;
+     font-family: monospace;
+    font-weight: 600;
+  }
+  .matchWrapper__teams {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    font-size: 1.6em;
+    color: rgb(255, 255, 255);
+  }
+  .matchWrapper__teams img {
+    width: 180px;
+  }
+  .matchWrapper__fixture {
+    display: grid;
+    justify-items: center;
+    gap: 20px;
+    text-align: center;
+     font-size: 1.3em;
+     margin: 100px 0 0 0;
+  }
+  .matchWrapper__scores {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 3em;
+  }
+  .matchWrapper__event{
+    margin:  20px 0 0 0;
+  }
+  .loader {
+    display: flex;
+    justify-content: center; /* Horizontally center content */
+    text-align: center;
+    font-size: 1.5em;
+    font-family: monospace;
+    font-weight: 700;
+    color: rgb(109, 109, 109);
+  }
+  /* CSS styles for large screens go here */
+}
