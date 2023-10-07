@@ -1,10 +1,9 @@
 "use client";
 import useSWR from "swr";
 import styles from "./page.module.css";
-import HeadToHeadList from "../_h2h-list/page";
 
-export default function Fixtures({ teamId1, teamId2 }) {
-  const fetcher = (url, headers) =>
+export default function HeadToHead({ fixtureId }) {
+ const fetcher = (url, headers) =>
     fetch(url, { headers }).then((res) => res.json());
 
   const headers = {
@@ -13,11 +12,11 @@ export default function Fixtures({ teamId1, teamId2 }) {
   };
 
   // should fetch condition based on teamId1 and teamId2
-  const shouldFetch = teamId1 && teamId2;
+  const shouldFetch = fixtureId;
 
   const { data, error, isLoading } = useSWR(
     shouldFetch
-      ? `https://v3.football.api-sports.io/fixtures/headtohead?h2h=${teamId1}-${teamId2}&status=NS`
+      ? `https://v3.football.api-sports.io/fixtures/${fixtureId}`
       : null,
     (url) => fetcher(url, headers),
     {
@@ -32,9 +31,9 @@ export default function Fixtures({ teamId1, teamId2 }) {
   if (isLoading) {
     return <div className={styles.loader}>Loading data... 🤖 </div>;
   }
-
+  console.log(data);
   const teamsData = data.response[0];
-
+console.log(teamsData);
   return (
     <div>
       <div className={styles.matchWrapper}>

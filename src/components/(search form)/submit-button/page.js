@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./page.module.css";
-import Fixtures from "@/app/(search data)/(fixture section)/_fixture/page";
+import Fixtures from "@/app/(search data)/(fixture section)/fixture/page";
 
 export default function SubmitButton({ inputResultId1, inputResultId2 }) {
   const [teamId1, setTeamId1] = useState("");

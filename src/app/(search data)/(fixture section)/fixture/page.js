@@ -1,23 +1,23 @@
 "use client";
 import useSWR from "swr";
 import styles from "./page.module.css";
-import Statistics from "../_h2h-statistics/page";
+import HeadToHeadList from "../h2h-list/page";
 
-export default function HeadToHead({ params }) {
+export default function Fixtures({ teamId1, teamId2 }) {
   const fetcher = (url, headers) =>
     fetch(url, { headers }).then((res) => res.json());
 
   const headers = {
     "x-rapidapi-host": "v3.football.api-sports.io",
-    "x-rapidapi-key": "",
+    "x-rapidapi-key": "d1ed515a838a8284f71cf976771ea33f",
   };
 
-  // should fetch condition
-  const shouldFetch = params;
+  // should fetch condition based on teamId1 and teamId2
+  const shouldFetch = teamId1 && teamId2;
 
-  const { data, error } = useSWR(
+  const { data, error, isLoading } = useSWR(
     shouldFetch
-      ? `https://v3.football.api-sports.io/fixtures?id=${params}`
+      ? `https://v3.football.api-sports.io/fixtures/headtohead?h2h=${teamId1}-${teamId2}&status=NS`
       : null,
     (url) => fetcher(url, headers),
     {
@@ -26,10 +26,13 @@ export default function HeadToHead({ params }) {
   );
 
   if (error) {
-    return <div>Failed to load</div>;
+    return <div className={styles.loader}>Failed to load</div>;
   }
 
-  
+  if (isLoading) {
+    return <div className={styles.loader}>Loading data... 🤖 </div>;
+  }
+
   const teamsData = data.response[0];
 
   return (
@@ -42,15 +45,6 @@ export default function HeadToHead({ params }) {
             </div>
             <div>
               <p>{teamsData.league.round}</p>
-            </div>
-            <div>
-              <p>
-                {new Date(teamsData.fixture.date).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </p>
             </div>
           </div>
         </section>
@@ -66,19 +60,23 @@ export default function HeadToHead({ params }) {
               </div>
             </div>
             <div className={styles.matchWrapper__fixture}>
-              <div className={styles.matchWrapper__scores}>
-                <p>{teamsData.goals.home}</p>
-                <p>-</p>
-                <p>{teamsData.goals.away}</p>
+              <div className={styles.matchWrapper__time}>
+                <p>
+                  {new Date(teamsData.fixture.date).toLocaleDateString(
+                    "en-US",
+                    {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    }
+                  )}
+                </p>
               </div>
-              <p>{teamsData.fixture.status.long}</p>
               <div className={styles.matchWrapper__event}>
-                <p>
-                  {teamsData.fixture.venue.name},{teamsData.fixture.venue.city}
-                </p>
-                <p>
-                  <span>&#128364;</span> {teamsData.fixture.referee}{" "}
-                </p>
+                <p>Vs</p>
+              </div>
+              <div>
+                <p>{teamsData.fixture.status.long}</p>
               </div>
             </div>
             <div className={styles.matchWrapper__teams}>
@@ -92,8 +90,12 @@ export default function HeadToHead({ params }) {
             </div>
           </div>
         </section>
+        <section>
+          {teamId1 && teamId2 && (
+            <HeadToHeadList teamId1={teamId1} teamId2={teamId2} />
+          )}
+        </section>
       </div>
-      <Statistics fixtureId={teamsData.fixture.id} />
     </div>
   );
 }

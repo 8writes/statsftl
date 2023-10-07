@@ -8,7 +8,7 @@ export default function Status() {
 
   const headers = {
     "x-rapidapi-host": "v3.football.api-sports.io",
-   // "x-rapidapi-key": "d1ed515a838a8284f71cf976771ea33f",
+   // "x-rapidapi-key": "",
   };
 
   const { data, error, isLoading } = useSWR(
